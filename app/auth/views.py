@@ -1,6 +1,10 @@
-from flask import render_template,redirect,url_for
-from app.main import main
+from flask import render_template, redirect,url_for
+from app.auth import auth
 
-@main.route('/home')
-def index():
-    return render_template('index.html')
+@auth.route('/login')
+def login():
+    return render_template('auth/login.html')
+
+@auth.route('/signup')
+def signup():
+    return render_template('auth/signup.html') 
